@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <img src="gambar/logo.png" alt="Universitas Trisakti" width="40">
+        <div class="university-title">
+            <h1>Universitas Trisakti</h1>
+            <p>Fakultas Ekonomi dan Bisnis</p>
+        </div>
+    </div>
+    <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</div>
+
+
+    <!-- Main Content -->
+    <div class="hero-section" id="home">
+        <div class="blue-overlay"></div>
+    
+        <!-- Gambar Hero 1 -->
+        <img src="gambar/defaultHero1.png" alt="Hero Image 1" class="hero-image" id="heroImage1">
+        <!-- Gambar Hero 2 -->
+        <img src="gambar/defaultHero2.png" alt="Hero Image 2" class="hero-image" id="heroImage2">
+        <!-- Gambar Hero 3 -->
+        <img src="gambar/defaultHero3.png" alt="Hero Image 3" class="hero-image" id="heroImage3">
+    
+        <div class="hero-text">
+            <h1>One Stop Learning<br>for Sustainable<br>Development</h1>
+        </div>
+        <div class="hero-pagination">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <div class="about-us-text" id="about">
+        <h2 class="about-title">About Us</h2>
+    </div>
+    <!-- Sejarah Section -->
+    <div class="sejarah-section">
+        <div class="Black-overlay"></div>
+        <div class="sejarah-card">
+            <h2>Sejarah</h2>
+            <p>Fakultas Ekonomi dan Bisnis Universitas Trisakti didirikan pada tahun 1965 sebagai bagian dari komitmen universitas untuk memajukan pendidikan ekonomi dan bisnis di Indonesia. Sejak berdirinya, FEB Trisakti telah berkembang pesat dengan program akademik yang relevan dengan kebutuhan industri dan penelitian yang diakui baik di tingkat nasional maupun internasional. Dengan tenaga pengajar berkualitas dan fasilitas modern, fakultas ini terus berinovasi dalam menghasilkan lulusan yang kompeten dan berintegritas tinggi, siap bersaing di dunia bisnis global.</p>
+        </div>
+        <div class="sejarah-background">
+            <img src="gambar/gedung1.png" alt="Background Image">
+        </div>
+    </div>
+<div class="container" id="visimisi">
+    <div class="section visi-misi">
+        <h2>Visi dan Misi</h2>
+        <div class="visi-misi-container">
+            <div class="visi-card">
+                <h3>Visi</h3>
+                <p>Menjadi fakultas yang unggul dalam pendidikan, penelitian, dan pengabdian kepada masyarakat di bidang ekonomi dan bisnis.</p>
+            </div>
+            <div class="misi-card">
+                <h3>Misi</h3>
+                <p>Mendidik dan mengembangkan sumber daya manusia yang kompeten, profesional, dan berintegritas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="prodi">
+        <h2>Program Studi</h2>
+        <div class="program-studies">
+            <div class="program-card">
+                <h3>Ekonomi Pembangunan</h3>
+                <p>Mempelajari teori dan praktik dalam pengembangan ekonomi dan kebijakan publik.</p>
+            </div>
+            <div class="program-card">
+                <h3>Manajemen</h3>
+                <p>Fokus pada pengelolaan sumber daya manusia dan strategi bisnis.</p>
+            </div>
+            <div class="program-card">
+                <h3>Akuntansi</h3>
+                <p>Mempelajari prinsip akuntansi dan laporan keuangan untuk bisnis.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="prestasi">
+        <h2>Prestasi FEB Trisakti</h2>
+        <div class="prestasi">
+            <div class="prestasi-item">
+                <h4>Juara 1 Kompetisi Bisnis Nasional 2023</h4>
+                <p>Mahasiswa FEB Trisakti berhasil meraih Juara 1 dalam Kompetisi Bisnis Nasional 2023 dengan inovasi bisnis yang berkelanjutan.</p>
+            </div>
+            <div class="prestasi-item">
+                <h4>Penghargaan Penelitian Terbaik 2022</h4>
+                <p>Dosen FEB Trisakti menerima penghargaan penelitian terbaik di bidang ekonomi pembangunan oleh Kementerian Pendidikan.</p>
+            </div>
+            <div class="prestasi-item">
+                <h4>Juara 2 Kompetisi Akuntansi Internasional</h4>
+                <p>Tim Akuntansi FEB Trisakti meraih Juara 2 dalam kompetisi akuntansi tingkat internasional yang diadakan di Singapura.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Section -->
+<footer class="footer-section" id="contact">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="gambar/logo.png" alt="Universitas Trisakti" width="90">
+            <p>Universitas Trisakti<br>Fakultas Ekonomi dan Bisnis</p>
+        </div>
+        <div class="footer-column">
+            <h3>Alamat</h3>
+            <p>Gedung Hendriawan Sie (ged. S)<br> Jalan Kyai Tapa No. 1 Grogol<br> Jakarta Barat, Indonesia</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#about">About As</a></li>
+                <li><a href="#visimisi">Visi dan Misi</a></li>
+                <li><a href="#prodi">Program Studi</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Hubungi Kami</h3>
+            <p>Phone: (62-21) 566 3232 ext.8343<br>Email: pmbfeb@trisakti.ac.id</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Universitas Trisakti. Hak Cipta dilindungi.</p>
+    </div>
+</footer>
+
+<script>
+    // Mengambil gambar hero dari localStorage jika ada dan mengatur sumber gambar
+    for (let i = 1; i <= 3; i++) {
+        const heroImageBase64 = localStorage.getItem(`heroImage${i}`);
+        if (heroImageBase64) {
+            document.getElementById(`heroImage${i}`).src = heroImageBase64;
+        }
+    }
+</script>
+
+    <script src="java/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    transition: margin-left 0.3s;
+    flex-grow: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.menu {
+    list-style-type: none;
+    flex-grow: 1;
+}
+.menu-item {
+    margin-bottom: 20px;
+}
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+.menu-item a .icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+.menu-item.active a {
+    background-color: #3498db;
+    border-radius: 8px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 40px;
+    margin-left: 260px;
+    transition: margin-left 0.3s;
+}
+.main-content.shrink {
+    margin-left: 0;
+}
+.main-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.main-header h1 {
+    font-size: 2em;
+    color: #34495e;
+    font-weight: 600;
+    margin-left: 20px;
+}
+.menu-toggle {
+    font-size: 2em;
+    cursor: pointer;
+    display: inline-block;
+}
+.faculty-text {
+    margin-left: auto; 
+    font-size: 1.1em;
+    color: #34495e;
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+
+/* Profile Info Section */
+
+.info-card {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.info-card h1{
+    font-size: 3rem;
+}
+.info-card p {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* Dashboard Sections */
+.dashboard {
+    padding: 20px;
+}
+.card-section {
+    margin-bottom: 20px;
+}
+.card-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+.card-group {
+    display: flex;
+    gap: 10px;
+}
+.card {
+    background-color: #3498db; 
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+.card .card-number {
+    font-size: 2.5em;
+}
+.card .card-name {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+.card .more-info {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 0.9em;
+    color: white;
+    text-decoration: none;
+}
+.card .more-info:hover {
+    text-decoration: underline;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f9;
+    font-size: 0.8em;
+    color: gray;
+}
+
+/* Bantuan section */
+.bantuan-table {
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.bantuan-table table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+}
+/* Table headers and cells */
+.bantuan-table th, .bantuan-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: white;
+}
+/* Header background color */
+.bantuan-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+/* Rounded corners for table */
+.bantuan-table table th:first-child {
+    border-top-left-radius: 10px; 
+}
+.bantuan-table table th:last-child {
+    border-top-right-radius: 10px; 
+}
+.bantuan-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; 
+}
+.bantuan-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; 
+}
+/* Status colors */
+.bantuan-table .status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+}
+.bantuan-table .status.open {
+    color: #27ae60;
+    background-color: #e9f5ec;
+}
+.bantuan-table .status.closed {
+    color: #e74c3c;
+    background-color: #fbeae9;
+}
+
+/* Button Styles */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn.jawab {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn.closed {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Settings Section */
+#settings-section {
+    background-color: #34495e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+#settings-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Setting Items */
+.setting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.setting-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.setting-item label {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.setting-item input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.setting-item .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.setting-item .custom-file-upload:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.setting-item span {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.setting-item button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    margin: 5px 0;
+}
+
+.setting-item button:hover {
+    transform: translateY(-2px);
+}
+
+.setting-item .btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.setting-item .btn-save:hover {
+    background-color: #218838;
+}
+
+.setting-item .btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.setting-item .btn-delete:hover {
+    background-color: #c82333;
+}
+
+.setting-item .btn-save:disabled,
+.setting-item .btn-delete:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.setting-item .btn-save:disabled:hover,
+.setting-item .btn-delete:disabled:hover {
+    background-color: #ccc;
+}
+
+/* File Name Display */
+.setting-item span#fileName1,
+.setting-item span#fileName2,
+.setting-item span#fileName3 {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #777;
+    margin-top: 5px;
+}
+
+.setting-item .file-upload-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* User Section */
+#user-section {
+    padding: 20px;
+}
+
+#user-section h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Search Bar */
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* User Table Styling */
+#userTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#userTable th, #userTable td {
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+#userTable th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+}
+
+#userTable tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+#userTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.filter-container {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+.filter-container select{
+    height: 40px;
+    width: 150px;
+}
+.filter-container input, .filter-container select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive Card Style */
+#userTable {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#userTable tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#userTable tbody tr td {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+#userTable tbody tr td:first-child {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Media Query for Larger Screens */
+@media(min-width: 768px) {
+    #userTable {
+        display: table;
+    }
+
+    #userTable tbody tr {
+        display: table-row;
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    #userTable tbody tr td {
+        display: table-cell;
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+

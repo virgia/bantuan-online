@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantuan online - FEB</title>
+    <link rel="stylesheet" href="css/style.user.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="gambar/logo.png" alt="Logo" class="logo">
+                <h2>Bantuan Online</h2>
+            </div>
+            <ul class="menu">
+                <li class="menu-item" id="profil">
+                    <a href="javascript:void(0);" onclick="showSection('user-info', 'Profil Saya')">
+                        <i class="fas fa-user icon"></i> Profil Saya
+                    </a>
+                </li>
+                <li class="menu-item" id="dashboard">
+                    <a href="javascript:void(0);" onclick="showSection('dashboard-section', 'Dashboard')">
+                        <i class="fas fa-chart-bar icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="menu-item" id="bantuan">
+                    <a href="javascript:void(0);" onclick="showSection('bantuan-section', 'Riwayat Bantuan')">
+                        <i class="fas fa-question-circle icon"></i> Bantuan
+                    </a>
+                </li>
+                <li class="menu-item" id="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt icon"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <!-- Hamburger Menu Icon -->
+                <span class="menu-toggle" id="menu-toggle">&#9776;</span>
+                <h1 id="main-title">Profil Saya</h1>
+                <p class="faculty-text">Fakultas Ekonomi & Bisnis</p>
+            </header>
+            <!-- User Info Section -->
+            <section id="user-info" class="user-info">
+                <div class="info-card">
+                    <p><strong>Username:</strong> User Name</p>
+                    <p><strong>Sebagai:</strong> User Role</p>
+                </div>
+            </section>
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="dashboard" style="display:none;">
+                <!-- Kategori Permasalahan Section -->
+                <section class="card-section">
+                    <h3>Kategori Permasalahan</h3>
+                    <div class="card-group">
+                        <div class="card">
+                            <span class="card-number">11</span>
+                            <span class="card-name">Jadwal UAS</span>
+                        </div>
+                        <div class="card">
+                            <span class="card-number">5</span>
+                            <span class="card-name">Keuangan</span>
+                        </div>
+                        <div class="card">
+                            <span class="card-number">25</span>
+                            <span class="card-name">Lain - Lain</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Kategori Pelayanan Section -->
+                <section class="card-section">
+                    <h3>Kategori Pelayanan</h3>
+                    <div class="card-group">
+                        <div class="card">
+                            <span class="card-number">3</span>
+                            <span class="card-name">FETEC</span>
+                        </div>
+                        <div class="card">
+                            <span class="card-number">2</span>
+                            <span class="card-name">Keuangan</span>
+                        </div>
+                        <div class="card">
+                            <span class="card-number">13</span>
+                            <span class="card-name">Perkuliahan</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- Bantuan Section -->
+            <section id="bantuan-section" class="bantuan-table" style="display:none;">
+                <h2>Riwayat Bantuan</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>Permasalahan</th>
+                            <th>Tujuan/Kategori</th>
+                            <th>Tanggal/Jam</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ingin meminta lampiran Sertifikat Seminar, Praktikum & Nilai TOEFL</td>
+                            <td>Ujian Pendaftaran Sidang Skripsi</td>
+                            <td>13-06-2024 03:06:03</td>
+                            <td><span class="status open">Open</span></td>
+                            <td><button class="btn jawab">Jawab</button> <button class="btn closed">Closed</button></td>
+                        </tr>
+                        <tr data-status="closed">
+                            <td>3</td>
+                            <td>Selamat malam ka, mau tanya untuk mengakses kuesioner terhadap kinerja</td>
+                            <td>Ujian Lain-lain</td>
+                            <td>14-10-2023 06:10:51</td>
+                            <td><span class="status open">Open</span></td>
+                            <td><button class="btn jawab">Jawab</button> <button class="btn closed ">Closed</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Ambil peran dan username yang disimpan di sessionStorage
+        const userRole = sessionStorage.getItem('userRole');
+        const username = sessionStorage.getItem('username');
+    
+        // Tampilkan peran dan username di halaman profil
+        if (userRole && username) {
+            document.querySelector('.info-card').innerHTML = `
+                <p><strong>Username:</strong> ${username}</p>
+                <p><strong>Sebagai:</strong> ${userRole.charAt(0).toUpperCase() + userRole.slice(1)}</p>
+            `;
+        }
+    
+        // Tampilkan bagian berdasarkan pilihan menu dan ubah judul
+        function showSection(sectionId, title) {
+            // Sembunyikan semua bagian
+            document.getElementById('user-info').style.display = 'none';
+            document.getElementById('dashboard-section').style.display = 'none';
+            document.getElementById('bantuan-section').style.display = 'none';
+    
+            // Tampilkan bagian yang dipilih
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Ubah teks judul
+            document.getElementById('main-title').textContent = title;
+        }
+    
+        // Icon Menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.querySelector('.main-content');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('shrink');
+        });
+    
+        // Highlight the active menu item
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    
+        // Fungsi untuk mengubah status menjadi Closed
+        document.querySelectorAll('.btn.closed').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const statusCell = row.querySelector('.status');
+                
+                // Ubah teks status menjadi "Closed" dan tambahkan kelas "closed"
+                statusCell.textContent = 'Closed';
+                statusCell.classList.remove('open');
+                statusCell.classList.add('closed');
+                
+                // Nonaktifkan tombol "Jawab" dan "Closed"
+                row.querySelector('.btn.jawab').classList.add('disabled');
+                row.querySelector('.btn.closed').classList.add('disabled');
+            });
+        });
+    </script>
+
+</body>
+</html>

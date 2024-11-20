@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Universitas Trisakti</title>
+    <link rel="stylesheet" href="css/style.login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side -->
+        <div class="right-side">
+            <div class="form-container">
+                <h2>Login to your account</h2>
+                
+                <form action="user.html" method="post">
+                    <div class="form-group">
+                        <label for="role">Daftar Sebagai</label>
+                        <select id="role" name="role">
+                            <option value="mahasiswa">Mahasiswa</option>
+                            <option value="orang tua">Orang Tua</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="Tendik">Tendik</option>
+                            <option value="Guest">Guest</option>
+                        </select>
+                    </div>
+
+                <form action="login.php" method="post">
+                    <div class="form-group">
+                        <label for="username">User name</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <br>
+                <p>Belum Punya Akun? <a href="signup.html">Klik Sign Up</a></p>
+                <p>Halaman Menu User <a href="user.html">Klik Disini</a></p>
+                <p>Halaman Menu Operator <a href="operator.html">Klik Disini</a></p>
+                <p>Halaman Menu Admin <a href="admin.html">Klik Disini</a></p>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="left-side">
+            <div class="overlay"></div>
+            <div class="content">
+                <img src="css/gambar/logo.png" alt="Universitas Trisakti" class="logo">
+                <h1>Universitas Trisakti</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Ambil nilai dari input username dan dropdown peran
+            const role = document.getElementById('role').value;
+            const username = document.getElementById('username').value;
+    
+            // Simpan nilai ke sessionStorage
+            sessionStorage.setItem('userRole', role);
+            sessionStorage.setItem('username', username);
+        });
+    </script>
+    
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Ambil nilai dari dropdown peran
+            const role = document.getElementById('role').value;
+            
+            // Simpan nilai ke sessionStorage
+            sessionStorage.setItem('userRole', role);
+        });
+    </script>
+</body>
+</html>
